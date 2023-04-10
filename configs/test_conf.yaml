@@ -1,0 +1,32 @@
+
+data_path: E:\Dataset\Pheno4D\h5_maize_2048_align.h5
+#data_path: E:\Dataset\Pheno4D\h5_tomato_2048_align.h5
+
+#model_path: best_models\best_model_pointnet_maize_2048_align.pth
+#model_path: best_models\best_model_pointnet_tomato_2048_align.pth
+#model_path: best_models\best_model_dgcnn_maize_2048_align.pth
+#model_path: best_models\best_model_pointnet2_maize_2048_align.pth
+model_path: best_models\best_model_pointnet2_tomato_2048_align.pth
+
+
+device: cuda:0
+#model: dgcnn
+model: pointnet2
+# model: fusion_net
+# model: model.fusion_net
+num_class: 3
+
+s_points: 2048
+
+# fusion net
+spatial_shape: 20
+point_dims: [9, 32]
+voxel_dims: [32, 64, 128, 256, 512]
+weight: [5, 0.6, 4.4]
+
+optimizer: Adma
+learning_rate: 0.0001
+epoch: 100
+batch_size: 2
+
+log_dir: ./logs
